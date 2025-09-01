@@ -1,0 +1,72 @@
+# Visual Studio / .NET
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+.vscode/*
+!/.vscode/settings.json
+
+
+# SQLite
+*.db
+*.sqlite
+*.db-journal
+
+
+# Node
+node_modules/
+/frontend/web-client/node_modules/
+/frontend/web-client/dist/
+/frontend/web-client/.turbo/
+
+
+# Vite / Build output
+dist/
+build/
+**/dist/
+**/build/
+
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Runtime
+.env
+.env.*.local
+secrets.json
+
+
+# Coverage
+coverage/
+
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+
+# Package manager lockfiles (optionally keep if you want reproducible installs)
+# package-lock.json
+# pnpm-lock.yaml
+# yarn.lock
+
+
+# Test output
+.vitest/
+
+
+# Misc
+*.zip
+*.tar.gz
+
+
+# Ignore DB file and frontend build by default
+backend/Payroll.Api/wwwroot/**
+frontend/web-client/dist/**
