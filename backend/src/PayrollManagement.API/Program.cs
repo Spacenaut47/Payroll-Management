@@ -81,6 +81,23 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// Add services
+builder.Services.AddControllers();
+
+// --- CORS setup ---
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5173") // your React dev URL
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
+// Add other services like DB, JWT, etc.
+
 var app = builder.Build();
 
 // Create DB & run migrations at startup (simple approach)
@@ -96,6 +113,7 @@ using (var scope = app.Services.CreateScope())
 // Configure middleware
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseCors("AllowFrontend");
 
 app.UseRouting();
 
